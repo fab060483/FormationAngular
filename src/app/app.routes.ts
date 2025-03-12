@@ -5,33 +5,40 @@ import { ListArticlesComponent } from './features/blog/list-articles/list-articl
 import { AddArticleComponent } from './features/blog/add-article/add-article.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './features/blog/login/login.component';
+import { RegisterComponent } from './features/blog/register/register.component';
 
 export const routes: Routes = [
 
     {
         path: '',
-        component: AccueilComponent
+        component: AccueilComponent,
+        title: 'Blog Angular'
     },
     {
         path: 'articles',
         component: ListArticlesComponent
     },
     {
-        path: 'article/:id',
-        component: ArticleComponent
-    },
-    {
         path: 'article/new',
         component: AddArticleComponent
     },
     {
-      path: 'login',
-      component: LoginComponent,
-      title: 'Connexion'
+        path: 'article/:id',
+        component: ArticleComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+        title: 'Connexion'
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
+        title: 'Inscription'
     },
     {
         path: '**',
         component: NotFoundComponent,
         title: '404'
-      }
+    }
 ];

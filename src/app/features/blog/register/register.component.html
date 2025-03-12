@@ -1,1 +1,48 @@
-<p>register works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="nom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Votre nom</label>
+        <input id="nom" type="text" formControlName="nom">
+        @if (nomErrors()) {
+          <span class="error">{{ nomErrors() }}</span>
+        }
+    </div>
+    <div>
+        <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Votre prénom</label>
+        <input id="prenom" type="text" formControlName="prenom">
+        @if (prenomErrors()) {
+          <span class="error">{{ prenomErrors() }}</span>
+        }
+    </div>
+    <div>
+        <label for="dateNaissance" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Votre date de naissance</label>
+        <input id="dateNaissance" type="date" formControlName="dateNaissance">
+        @if (dateNaissanceErrors()) {
+          <span class="error">{{ dateNaissanceErrors() }}</span>
+        }
+    </div>
+    <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Votre email</label>
+        <input id="email" type="email" formControlName="email">
+        @if (emailErrors()) {
+          <span class="error">{{ emailErrors() }}</span>
+        }
+    </div>
+    <div>
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Votre mot de passe</label>
+        <input id="password" type="password" formControlName="password">
+        @if (passwordErrors()) {
+          <span class="error">{{ passwordErrors() }}</span>
+        }  
+    </div>
+    <div>
+        <label for="password2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirmez votre mot de passe</label>
+        <input id="password2" type="password" formControlName="password2">
+        @if (password2Errors()) {
+          <span class="error">{{ password2Errors() }}</span>
+        }  
+    </div>
+
+    <button type="submit" [disabled]="!form.valid">
+      S'inscrire
+    </button>
+  </form>
