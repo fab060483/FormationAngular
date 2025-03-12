@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { AccueilComponent } from './features/blog/accueil/accueil.component';
-import { ArticleComponent } from './features/blog/article/article.component';
-import { ListArticlesComponent } from './features/blog/list-articles/list-articles.component';
-import { AddArticleComponent } from './features/blog/add-article/add-article.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { LoginComponent } from './features/blog/login/login.component';
-import { RegisterComponent } from './features/blog/register/register.component';
+import { AccueilComponent } from './features/blog/components/accueil/accueil.component';
+import { ArticleComponent } from './features/blog/components/article/article.component';
+import { ListArticlesComponent } from './features/blog/components/list-articles/list-articles.component';
+import { AddArticleComponent } from './features/blog/components/add-article/add-article.component';
+import { NotFoundComponent } from './features/blog/components/not-found/not-found.component';
+import { LoginComponent } from './features/blog/components/login/login.component';
+import { RegisterComponent } from './features/blog/components/register/register.component';
 
 export const routes: Routes = [
 
