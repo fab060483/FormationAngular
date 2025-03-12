@@ -1,52 +1,54 @@
-<form class="space-y-4 md:space-y-6" action="#">
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-        <div class="form-group">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-            <input
-            type="email"
-            id="email"
-            name="email"
-            [(ngModel)]="loginData.email"
-            required
-            email
-            #email="ngModel"
-            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@company.com" 
-          >
+<form class="max-w-md mx-auto mt-10 p-8 bg-white rounded-lg shadow-md space-y-6" action="#">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="form-group">
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="loginData.email"
+        required
+        email
+        #email="ngModel"
+        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="name@company.com"
+      >
+        @if (email.invalid && email.touched) {
+          <span class="error">Email invalide</span>
+        }
+        
+    </div>
 
-          @if (email.invalid && email.touched) {
-            <span class="error">Email invalide</span>
-          }
-        </div>
-  
-        <div class="form-group">
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            [(ngModel)]="loginData.password"
-            required
-            minlength="6"
-            #password="ngModel"
-            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="••••••••"
-          >
-          @if (password.invalid && password.touched) {
-            <span class="error">
-              Le mot de passe doit contenir au moins 6 caractères
-            </span>
-          }
-        </div>
-  
-        <button type="submit" [disabled]="loginForm.invalid">
-          Se connecter
-        </button>
-      </form>
+    <div class="form-group">
+      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="loginData.password"
+        required
+        minlength="6"
+        #password="ngModel"
+        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="••••••••"
+      >
+      @if (password.invalid && password.touched) {
+        <span class="text-red-600 text-sm mt-1">Le mot de passe doit contenir au moins 6 caractères</span>
+      }
+
+    </div>
     
-    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-        Don’t have an account yet? 
-        <a [routerLink]="['/register']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
-    </p>
+    <div class="flex justify-center p-5">
+      <button type="submit" [disabled]="loginForm.invalid" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Se connecter
+      </button>
+    </div>
+
+  </form>
+
+  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+    Don’t have an account yet? 
+    <a [routerLink]="['/register']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+  </p>
 </form>
 

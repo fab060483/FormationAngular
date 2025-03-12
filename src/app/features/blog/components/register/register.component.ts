@@ -29,7 +29,7 @@ export class RegisterComponent {
     const control = this.form.get('nom');
     if (control?.errors && control.touched) {
       if (control.errors['required']) return 'Nom requis';
-      if (control.errors['pattern']) return 'Format invalide';
+      if (control.errors['pattern']) return 'Nom invalide';
     }
     return null;
   });
@@ -37,8 +37,8 @@ export class RegisterComponent {
   prenomErrors = computed(() => {
     const control = this.form.get('prenom');
     if (control?.errors && control.touched) {
-      if (control.errors['required']) return 'Nom requis';
-      if (control.errors['pattern']) return 'Format invalide';
+      if (control.errors['required']) return 'Prénom requis';
+      if (control.errors['pattern']) return 'Prénom invalide';
     }
     return null;
   });
@@ -46,8 +46,8 @@ export class RegisterComponent {
   dateNaissanceErrors = computed(() => {
     const control = this.form.get('dateNaissance');
     if (control?.errors && control.touched) {
-      if (control.errors['required']) return 'Nom requis';
-      if (control.errors['pattern']) return 'Format invalide';
+      if (control.errors['required']) return 'Date de naissance requis';
+      if (control.errors['pattern']) return 'Date de naissance invalide';
     }
     return null;
   });
